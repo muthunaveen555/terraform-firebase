@@ -23,10 +23,10 @@ resource "google_storage_bucket" "static-site" {
 }
 
 
-resource "google_compute_backend_bucket" "pe-mock-backend" {
+resource "google_compute_backend_bucket" "dream11-mock-backend" {
   name        = var.backend_bucket_name
   description = "Contains beautiful images"
-  bucket_name = var.bucket_name
+  bucket_name = google_storage_bucket.static-site.name
   enable_cdn  = var.cdn_option
 }
 
