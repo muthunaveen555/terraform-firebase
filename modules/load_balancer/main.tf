@@ -7,7 +7,7 @@ data "google_compute_global_address" "my_address" {
 }
 
 resource "google_storage_bucket" "static-site" {
-  name          = "dream11-moc-project"
+  name          = "dream11-20952"
   force_destroy = true
   bucket_policy_only = true
 
