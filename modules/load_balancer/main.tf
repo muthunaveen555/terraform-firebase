@@ -22,6 +22,12 @@ resource "google_storage_bucket" "static-site" {
 #   }
 }
 
+resource "google_storage_bucket_access_control" "public_rule" {
+  bucket = google_storage_bucket.static-site.name
+  role   = "READER"
+  entity = "allUsers"
+}
+
 
 resource "google_compute_backend_bucket" "dream11-mock-backend" {
   name        = var.backend_bucket_name
