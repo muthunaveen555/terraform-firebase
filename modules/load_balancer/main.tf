@@ -19,11 +19,11 @@ resource "google_compute_url_map" "urlmap" {
 
   host_rule {
     hosts        = ["*"]
-    path_matcher = "myPath"
+    path_matcher = "mypath"
   }
 
   path_matcher {
-    name            = "myPath"
+    name            = "mypath"
     default_service = google_compute_backend_bucket.pe-mock-backend.id
 
     path_rule {
