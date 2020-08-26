@@ -7,7 +7,7 @@ resource "google_cloudfunctions_function" "myCloudFunction" {
     trigger_http              = var.http_trigger
 
     source_repository  {
-        url = "https://source.cloud.google.com/projects/iron-area-283612/pe-mock-project-cf/function-1//" #iron-area-283612/pe-mock-project-cf/function-1//
+        url = "https://source.cloud.google.com/iron-area-283612/pe-mock-project-cf/function-1//" #iron-area-283612/pe-mock-project-cf/function-1//
     }  
 
     labels = {

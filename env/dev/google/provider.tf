@@ -1,4 +1,4 @@
 provider "google" {
-  project     = "mykubernetes-283719"
+  project     = "iron-area-283612"
   region      = "us-central1"
 }
