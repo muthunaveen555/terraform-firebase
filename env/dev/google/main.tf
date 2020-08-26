@@ -1,5 +1,5 @@
 module "cloud-build" {
-    number_of_triggers = length(branch_list)
+    number_of_triggers = length(var.branch_list)
     source = "./../../../modules/cloud_build"
 }
 
