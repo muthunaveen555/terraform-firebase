@@ -5,7 +5,7 @@ variable "repo_name"{
     default="pe-mock-project-cf"
 }
 variable "func_name"{
-    default="function-1"
+    default="function-terraform"
 }
 variable "entrypoint"{
     default="hello_world"
