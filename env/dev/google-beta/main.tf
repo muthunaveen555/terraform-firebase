@@ -4,12 +4,12 @@
 # }
 
 module "firebase-webapp" {
-    source = "./../../../modules/firebase_webapp"
-    project-id = "iron-area-283612"
+  source     = "./../../../modules/firebase_webapp"
+  project-id = "iron-area-283612"
 }
 
 module "cloud-storage" {
-    source = "./../../../modules/cloud_storage"
-    web-app-id = module.firebase-webapp.app-id
-    project-id = "iron-area-283612"
+  source     = "./../../../modules/cloud_storage"
+  web-app-id = module.firebase-webapp.app-id
+  project-id = "iron-area-283612"
 }

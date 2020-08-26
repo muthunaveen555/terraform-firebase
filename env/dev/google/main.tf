@@ -1,6 +1,6 @@
 module "cloud-build" {
-   number_of_triggers = length(var.branch_list)
-   source = "./../../../modules/cloud_build"
+  number_of_triggers = length(var.branch_list)
+  source             = "./../../../modules/cloud_build"
 }
 
 # module "cloud-build" {
@@ -11,10 +11,10 @@ module "cloud-build" {
 
 
 module "cloud-function" {
-   number_of_functions = length(var.function_list)
-   source = "./../../../modules/cloud_functions"
+  number_of_functions = length(var.function_list)
+  source              = "./../../../modules/cloud_functions"
 }
 
 module "load_balancer" {
-   source = "./../../../modules/load_balancer"
+  source = "./../../../modules/load_balancer"
 }

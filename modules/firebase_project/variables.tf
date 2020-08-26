@@ -1,5 +1,5 @@
 variable "project-id" {
-    type = string
-    description = "google project id"
-    default = ""
+  type        = string
+  description = "google project id"
+  default     = ""
 }
