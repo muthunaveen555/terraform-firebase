@@ -15,4 +15,5 @@ module "firebase-webapp" {
 module "cloud-storage" {
     source = "./../../../modules/cloud_storage"
     web-app-id = module.firebase-webapp.app-id
+    project-id = module.google-project.google-project-id
 }
