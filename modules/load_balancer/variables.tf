@@ -1,8 +1,8 @@
 variable "bucket_name"{
-    default="dream11.com"
+    default="dream11-moc-project"
 }
 variable "backend_bucket_name"{
-    default="dream11-backend"
+    default="dream11-moc-project"
 }
 variable "cdn_option"{
     type=bool
