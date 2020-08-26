@@ -7,7 +7,7 @@ resource "google_cloudfunctions_function" "myCloudFunction" {
     trigger_http              = var.http_trigger
 
     source_repository  {
-        url = "https://source.developers.google.com/projects/iron-area-283612/repos/${var.repo_name}/${var.branch_name}${var.sourcedir}"
+        url = "https://source.developers.google.com/projects/training-freshers/repos/pe-mock-project-cf/moveable-aliases/function-1"
     }  
 
     labels = {

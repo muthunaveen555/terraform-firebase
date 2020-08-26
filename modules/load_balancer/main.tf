@@ -2,6 +2,10 @@ resource "google_compute_global_address" "myStaticIP" {
   name = "pe-mock-global-lb-ip"
 }
 
+data "google_compute_global_address" "my_address" {
+  name = "pe-mock-global-lb-ip"
+}
+
 resource "google_compute_backend_bucket" "pe-mock-backend" {
   name        = var.backend_bucket_name
   description = "Contains beautiful images"
@@ -45,5 +49,5 @@ resource "google_compute_global_forwarding_rule" "forwardingHTTPRule" {
   target                = google_compute_target_http_proxy.targetHTTPProxy.id
   port_range            = "80"
   load_balancing_scheme = "EXTERNAL"
-  ip_address            = google_compute_global_address.myStaticIP.id
+  ip_address            = data.google_compute_global_address.my_address.address
 }
