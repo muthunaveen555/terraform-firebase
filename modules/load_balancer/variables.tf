@@ -1,8 +1,8 @@
 variable "bucket_name"{
-    default="firebase-webapp"
+    default="dream11-firebase"
 }
 variable "backend_bucket_name"{
-    default="firebase-webapp"
+    default="dream11-firebase"
 }
 variable "cdn_option"{
     type=bool
