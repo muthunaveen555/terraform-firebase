@@ -9,7 +9,6 @@ module "firebase-project" {
 
 module "firebase-webapp" {
     source = "./../../../modules/firebase_webapp"
-    depends_on = [module.firebase-project]
     project-id = module.google-project.google-project-id
 }
 
