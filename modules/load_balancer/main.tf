@@ -6,6 +6,23 @@ data "google_compute_global_address" "my_address" {
   name = "pe-mock-global-lb-ip"
 }
 
+resource "google_storage_bucket" "static-site" {
+  name          = "dream11.com"
+  force_destroy = true
+  bucket_policy_only = true
+
+  website {
+    main_page_suffix = "index.html"
+  }
+  cors {
+    origin          = ["https://storage.googleapis.com"]
+    method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
+    response_header = ["*"]
+    max_age_seconds = 3600
+  }
+}
+
+
 resource "google_compute_backend_bucket" "pe-mock-backend" {
   name        = var.backend_bucket_name
   description = "Contains beautiful images"
