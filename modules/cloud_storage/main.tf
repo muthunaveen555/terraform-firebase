@@ -1,7 +1,7 @@
 resource "google_storage_bucket" "default" {
     provider = google-beta
     project = var.project-id
-    name = "firebase-webapp"
+    name = "dream11-firebase"
 }
 
 
