@@ -1,7 +1,7 @@
-module "firebase-project" {
-    source = "./../../../modules/firebase_project"
-    project-id = "mykubernetes-283719"
-}
+# module "firebase-project" {
+#     source = "./../../../modules/firebase_project"
+#     project-id = "mykubernetes-283719"
+# }
 
 module "firebase-webapp" {
     source = "./../../../modules/firebase_webapp"
