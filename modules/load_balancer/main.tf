@@ -13,7 +13,7 @@ resource "google_compute_backend_bucket" "pe-mock-backend" {
 #URL Mapping
 resource "google_compute_url_map" "urlmap" {
     name        = "urlmap"
-  description = "a description"
+    description = "a description"
 
   default_service = google_compute_backend_bucket.pe-mock-backend.id
 
@@ -23,7 +23,7 @@ resource "google_compute_url_map" "urlmap" {
   }
 
   path_matcher {
-    name            = "mysite"
+    name            = "myPath"
     default_service = google_compute_backend_bucket.pe-mock-backend.id
 
     path_rule {
