@@ -36,7 +36,7 @@ resource "google_compute_url_map" "urlmap" {
     name        = "urlmap"
     description = "a description"
 
-  default_service = google_compute_backend_bucket.pe-mock-backend.id
+  default_service = google_compute_backend_bucket.dream11-mock-backend.id
 
   host_rule {
     hosts        = ["*"]
@@ -45,11 +45,11 @@ resource "google_compute_url_map" "urlmap" {
 
   path_matcher {
     name            = "mypath"
-    default_service = google_compute_backend_bucket.pe-mock-backend.id
+    default_service = google_compute_backend_bucket.dream11-mock-backend.id
 
     path_rule {
       paths   = ["/*"]
-      service = google_compute_backend_bucket.pe-mock-backend.id
+      service = google_compute_backend_bucket.dream11-mock-backend.id
     }
   }
 }
