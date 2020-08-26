@@ -9,17 +9,17 @@ data "google_compute_global_address" "my_address" {
 resource "google_storage_bucket" "static-site" {
   name          = "dream11-20952"
   force_destroy = true
-  bucket_policy_only = true
+#   bucket_policy_only = true
 
-  website {
-    main_page_suffix = "index.html"
-  }
-  cors {
-    origin          = ["https://storage.googleapis.com"]
-    method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
-    response_header = ["*"]
-    max_age_seconds = 3600
-  }
+#   website {
+#     main_page_suffix = "index.html"
+#   }
+#   cors {
+#     origin          = ["https://storage.googleapis.com"]
+#     method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
+#     response_header = ["*"]
+#     max_age_seconds = 3600
+#   }
 }
 
 
