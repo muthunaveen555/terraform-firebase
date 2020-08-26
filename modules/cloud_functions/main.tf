@@ -8,5 +8,4 @@ resource "google_cloudfunctions_function" "myCloudFunction" {
   source_repository {
     url = "https://source.developers.google.com/projects/iron-area-283612/repos/pe-mock-project-cf/moveable-aliases/${var.url_branch[count.index]}"
   }
-
 }

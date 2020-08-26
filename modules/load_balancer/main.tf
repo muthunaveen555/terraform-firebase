@@ -1,13 +1,13 @@
 resource "google_compute_global_address" "myStaticIP" {
-  name = "pe-mock-global-lb-ip"
+  name = var.elastic-ip-name
 }
 
 data "google_compute_global_address" "my_address" {
-  name = "pe-mock-global-lb-ip"
+  name = var.elastic-ip-name
 }
 
 resource "google_storage_bucket" "static-site" {
-  name          = "dream11-20952"
+  name          = var.static-site-bucket-name
   force_destroy = true
   #   bucket_policy_only = true
 
@@ -24,14 +24,13 @@ resource "google_storage_bucket" "static-site" {
 
 resource "google_storage_bucket_access_control" "public_rule" {
   bucket = google_storage_bucket.static-site.name
-  role   = "READER"
-  entity = "allUsers"
+  role   = var.user-role
+  entity = var.user-entity
 }
 
 
 resource "google_compute_backend_bucket" "dream11-mock-backend" {
   name        = var.backend_bucket_name
-  description = "Contains beautiful images"
   bucket_name = google_storage_bucket.static-site.name
   enable_cdn  = var.cdn_option
 }
@@ -39,18 +38,18 @@ resource "google_compute_backend_bucket" "dream11-mock-backend" {
 #Creating Forwarding rules
 #URL Mapping
 resource "google_compute_url_map" "urlmap" {
-  name        = "urlmap"
+  name        = var.urlmap-name
   description = "a description"
 
   default_service = google_compute_backend_bucket.dream11-mock-backend.id
 
   host_rule {
     hosts        = ["*"]
-    path_matcher = "mypath"
+    path_matcher = var.pathname
   }
 
   path_matcher {
-    name            = "mypath"
+    name            = var.pathname
     default_service = google_compute_backend_bucket.dream11-mock-backend.id
 
     path_rule {
@@ -62,15 +61,14 @@ resource "google_compute_url_map" "urlmap" {
 
 #HTTP Configuring
 resource "google_compute_target_http_proxy" "targetHTTPProxy" {
-  name        = var.target_proxy_name
-  description = "HTTP Target Proxy"
-  url_map     = google_compute_url_map.urlmap.id
+  name    = var.target_proxy_name
+  url_map = google_compute_url_map.urlmap.id
 }
 
 resource "google_compute_global_forwarding_rule" "forwardingHTTPRule" {
   name                  = var.forwarding_rule_name
   target                = google_compute_target_http_proxy.targetHTTPProxy.id
-  port_range            = "80"
-  load_balancing_scheme = "EXTERNAL"
+  port_range            = var.port-range
+  load_balancing_scheme = var.load-balancing-scheme
   ip_address            = data.google_compute_global_address.my_address.address
 }

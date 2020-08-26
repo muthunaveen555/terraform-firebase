@@ -1,8 +1,6 @@
 variable "number_of_functions" {
-  type = number
-}
-variable "func_name" {
-  default = "function-blah-blah"
+  type        = number
+  description = "number of cloud functions we need to create"
 }
 variable "entrypoint" {
   default = "hello_world"

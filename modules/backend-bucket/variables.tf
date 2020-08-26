@@ -4,8 +4,8 @@ variable "project-id" {
   default     = ""
 }
 
-variable "bucket_name" {
+variable "bucket-name" {
   type        = string
   description = "bucket name"
-  default     = "dream11-terraform-state-backend"
+  default     = ""
 }

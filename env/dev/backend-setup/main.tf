@@ -1,3 +1,4 @@
 module "backend-bucket-module" {
-  source = "./../../../modules/backend-bucket"
+  bucket-name = "dream11-terraform-state-backend"
+  source      = "./../../../modules/backend-bucket"
 }
