@@ -16,7 +16,7 @@ variable "http_trigger" {
 }
 variable "function_list" {
   type        = list(string)
-  default     = ["function-1-mock", "function-2-mock"]
+  default     = ["function-1-nava", "function-2-nava"]
   description = "(optional) describe your variable"
 }
 variable "url_branch" {
