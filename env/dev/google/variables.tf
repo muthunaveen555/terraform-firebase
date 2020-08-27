@@ -57,3 +57,15 @@ variable "target_proxy_name" {
 variable "forwarding_rule_name" {
   default = "pe-mock-forwarding-rule"
 }
+
+variable "bucket-branch-name" {
+  type = string
+  description = "branch name"
+  default = "master"
+}
+
+variable "bucket-repo-name" {
+  type = string
+  description = "branch name"
+  default = "pe-mock-project-gcs"
+}
