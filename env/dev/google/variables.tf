@@ -9,6 +9,7 @@ variable "func_name" {
 }
 variable "number_of_functions" {
   type    = number
+  default = 1
 }
 variable "branch_list" {
   type        = list(string)
