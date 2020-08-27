@@ -6,3 +6,11 @@ resource "google_cloudbuild_trigger" "myTrigger" {
     repo_name   = var.repo_name
   }
 }
+
+resource "google_cloudbuild_trigger" "bucketTrigger" {
+  filename = var.yamlfile
+  trigger_template {
+    branch_name = var.branch-name
+    repo_name   = var.repo_name
+  }
+}

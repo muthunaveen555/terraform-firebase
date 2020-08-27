@@ -20,3 +20,9 @@ variable "yamlfile" {
   description = "yaml file name"
   default     = "cloudbuild.yaml"
 }
+
+variable "branch-name" {
+  type = string
+  description = "branch name"
+  default = ""
+}
