@@ -9,23 +9,22 @@ variable "func_name" {
 }
 variable "number_of_functions" {
   type    = number
-  default = 3
 }
 variable "branch_list" {
   type        = list(string)
-  default     = ["function-1", "function-2"]
-  description = "(optional) describe your variable"
+  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet"]
+  description = "list of cloud source repository branches we need to set the trigger"
 }
 #List of Cloud Function names
 variable "function_list" {
   type        = list(string)
-  default     = ["function-1-nava", "function-2-nava"]
-  description = "(optional) describe your variable"
+  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet"]
+  description = "list of functions"
 }
 variable "url_branch" {
   type        = list(string)
-  default     = ["function-1", "function-2"]
-  description = "(optional) describe your variable"
+  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet"]
+  description = "list of branch urls"
 }
 variable "entrypoint" {
   default = "hello_world"
