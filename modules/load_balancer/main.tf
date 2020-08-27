@@ -11,15 +11,15 @@ resource "google_storage_bucket" "static-site" {
   force_destroy = true
   #   bucket_policy_only = true
 
-  #   website {
-  #     main_page_suffix = "index.html"
-  #   }
-  #   cors {
-  #     origin          = ["https://storage.googleapis.com"]
-  #     method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
-  #     response_header = ["*"]
-  #     max_age_seconds = 3600
-  #   }
+  website {
+    main_page_suffix = "index.html"
+  }
+  cors {
+    origin          = ["https://storage.googleapis.com"]
+      method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
+      response_header = ["*"]
+      max_age_seconds = 3600
+    }
 }
 
 resource "google_storage_bucket_access_control" "public_rule" {
