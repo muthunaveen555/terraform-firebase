@@ -9,3 +9,7 @@ output "function_urls" {
 output "loadbalancer-ip" {
     value = module.load_balancer.loadbalancer-ip
 }
+
+output "website-bucket-url" {
+    value = module.load_balancer.website-bucket-url
+}
