@@ -1,6 +1,3 @@
-variable "bucket_name" {
-  default = "dream11-moc-project"
-}
 variable "backend_bucket_name" {
   default = "backend-bucket-mock"
 }
@@ -23,7 +20,7 @@ variable "elastic-ip-name" {
 variable "static-site-bucket-name" {
   type        = string
   description = "bucket name where the website is getting hosted"
-  default     = "dream11-20952"
+  default     = "dream11-website-bucket"
 }
 
 variable "user-role" {

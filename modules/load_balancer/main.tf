@@ -20,6 +20,9 @@ resource "google_storage_bucket" "static-site" {
       response_header = ["*"]
       max_age_seconds = 3600
     }
+   versioning {
+    enabled = "true"
+  }
 }
 
 resource "google_storage_bucket_access_control" "public_rule" {
