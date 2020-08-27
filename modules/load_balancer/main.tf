@@ -32,7 +32,7 @@ resource "google_storage_bucket" "static-site" {
 # }
 
 resource "google_storage_default_object_access_control" "public_rule" {
-  bucket = google_storage_bucket.bucket.name
+  bucket = google_storage_bucket.static-site.name
   role   = "READER"
   entity = "allUsers"
 }
