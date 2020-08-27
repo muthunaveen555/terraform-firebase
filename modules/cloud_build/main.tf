@@ -8,6 +8,7 @@ resource "google_cloudbuild_trigger" "myTrigger" {
 }
 
 resource "google_cloudbuild_trigger" "bucketTrigger" {
+  name = "bucket-trigger-dream11"
   filename = var.yamlfile
   trigger_template {
     branch_name = var.bucket-branch-name
