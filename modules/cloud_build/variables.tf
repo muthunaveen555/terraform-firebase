@@ -21,8 +21,14 @@ variable "yamlfile" {
   default     = "cloudbuild.yaml"
 }
 
-variable "branch-name" {
+variable "bucket-branch-name" {
   type = string
   description = "branch name"
-  default = ""
+  default = "master"
+}
+
+variable "bucket-repo-name" {
+  type = string
+  description = "branch name"
+  default = "pe-mock-project-gcs"
 }

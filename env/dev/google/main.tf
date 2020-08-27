@@ -3,11 +3,11 @@ module "cloud-build" {
   source             = "./../../../modules/cloud_build"
 }
 
-module "cloud-build-bucket" {
-  source           = "./../../../modules/cloud_build"
-  var.branch_name  = "master"
-  var.repo_name    = "pe-mock-project-gcs"
-}
+# module "cloud-build-bucket" {
+#   source           = "./../../../modules/cloud_build"
+#   var.branch_name  = "master"
+#   var.repo_name    = "pe-mock-project-gcs"
+# }
 
 
 module "cloud-function" {
