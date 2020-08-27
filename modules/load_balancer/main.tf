@@ -80,7 +80,3 @@ resource "google_compute_global_forwarding_rule" "forwardingHTTPRule" {
   load_balancing_scheme = var.load-balancing-scheme
   ip_address            = data.google_compute_global_address.my_address.address
 }
-
-data "google_compute_forwarding_rule" "my-forwarding-rule" {
-  name = var.forwarding_rule_name
-}
