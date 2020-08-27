@@ -1,5 +1,6 @@
 resource "google_cloudbuild_trigger" "myTrigger" {
   count    = var.number_of_triggers
+  name     = var.branch_list[count.index]
   filename = var.yamlfile
   trigger_template {
     branch_name = var.branch_list[count.index]
