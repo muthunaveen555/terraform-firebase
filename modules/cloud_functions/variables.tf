@@ -14,11 +14,11 @@ variable "http_trigger" {
 }
 variable "function_list" {
   type        = list(string)
-  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet","function-user-match-history"]
+  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet","function-user-match-history","function-opponent-team"]
   description = "list of functions"
 }
 variable "url_branch" {
   type        = list(string)
-  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet","function-user-match-history"]
+  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet","function-user-match-history", "function-opponent-team"]
   description = "list of branch urls"
 }
