@@ -11,20 +11,27 @@ variable "number_of_functions" {
   type    = number
   default = 1
 }
+
+variable "yamlfile" {
+  type        = string
+  description = "yaml file name"
+  default     = "cloudbuild.yaml"
+}
+
 variable "branch_list" {
   type        = list(string)
-  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet"]
+  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet","function-user-match-history"]
   description = "list of cloud source repository branches we need to set the trigger"
 }
 #List of Cloud Function names
 variable "function_list" {
   type        = list(string)
-  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet"]
+  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet","function-user-match-history"]
   description = "list of functions"
 }
 variable "url_branch" {
   type        = list(string)
-  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet"]
+  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet","function-user-match-history"]
   description = "list of branch urls"
 }
 variable "entrypoint" {

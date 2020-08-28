@@ -6,7 +6,7 @@ variable "repo_name" {
 
 variable "branch_list" {
   type        = list(string)
-  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet"]
+  default     = ["function-signup","function-list-teams","function-list-leagues","function-list-players","function-user-team-selection","function-scorecard","function-prize-money","function-wallet","function-user-match-history"]
   description = "list of cloud source repository branches we need to set the trigger"
 }
 

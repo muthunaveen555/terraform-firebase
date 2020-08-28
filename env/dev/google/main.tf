@@ -1,6 +1,7 @@
 #cloud build module
 module "cloud-build" {
   number_of_triggers = length(var.branch_list)
+  yamlfile = "cloudbuild.yaml"
   source             = "./../../../modules/cloud_build"
 }
 
